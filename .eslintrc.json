@@ -5,7 +5,9 @@
     },
     "extends": [
         "eslint:recommended",
-        "plugin:@typescript-eslint/recommended"
+        "airbnb",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:import/typescript"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -16,21 +18,12 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "indent": [
+        "import/extensions": [
             "error",
-            "space"
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "always"
+            "ignorePackages",
+            {
+                "ts": "never"
+            }
         ]
     }
 }
