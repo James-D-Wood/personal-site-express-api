@@ -6,6 +6,9 @@ const router = Router()
 
 // GET: all dev journal entries
 router.get('/', (req, res) => {
+  // TODO: remove
+  res.append('Access-Control-Allow-Origin',  '*');
+
   // DUMMY PLACEHOLDER
   const payload: JournalEntriesDTO = {
     data: [
