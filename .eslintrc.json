@@ -24,6 +24,7 @@
             {
                 "ts": "never"
             }
-        ]
+        ],
+        "no-console": 0  
     }
 }

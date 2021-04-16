@@ -4,6 +4,7 @@ import jounralEntryRouter from './routes/journalEntries';
 const app = express()
 const port = 8000
 
+app.use(express.json());
 app.use('/journal/entries', jounralEntryRouter);
 
 app.listen(port, () => {

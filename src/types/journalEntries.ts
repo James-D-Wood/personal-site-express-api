@@ -1,4 +1,5 @@
-interface JournalEntryData {
+export interface JournalEntryData {
+  _id?: string,
   id: string,
   title: string,
   timestamp: number,
@@ -7,6 +8,10 @@ interface JournalEntryData {
   htmlBody: string,
 }
 
+export interface JournalEntryDTO {
+  data: JournalEntryData,
+}
+
 export interface JournalEntriesDTO {
-    data: JournalEntryData[]
+  data: JournalEntryData[],
 }
