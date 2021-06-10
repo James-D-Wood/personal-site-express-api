@@ -1,3 +1,4 @@
+import { InsertOneWriteOpResult } from "mongodb";
 import { JournalEntryData } from "../types/journalEntries";
 import { journalEntryCollection } from "./common";
 
@@ -37,13 +38,13 @@ const model: JournalEntryModel = {
     create: (entry, next) => {
         console.log("Creating a Journal Entry");
         journalEntryCollection.insertOne(entry)
-            .then(result => {
+            .then((result: InsertOneWriteOpResult<any>) => {
                 console.log("after insert");
                 console.log(result);
                 next(result.ops[0], null);
             })
-            .catch((reason: string) => {
-                next(null, reason);
+            .catch((reason: Error) => {
+                next(null, reason.toString());
             });
     },
 };
